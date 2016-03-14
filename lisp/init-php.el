@@ -7,6 +7,7 @@
 (require-package 'php-refactor-mode)
 (require-package 'drupal-mode)
 (require-package 'geben)
+(require-package 'php-extras)
 
 
 (require 'php-auto-yasnippets)

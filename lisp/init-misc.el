@@ -16,10 +16,11 @@
 
 
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(powerline-default-theme)
 ;; Enable projectile mode
 (linum-mode t)
 (projectile-global-mode)
 (global-git-gutter-mode +1)
+
+(customize-set-variable 'indent-tabs-mode nil)
 
 (provide 'init-misc)
