@@ -8,6 +8,9 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . scss-mode))
 
+(add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.twig\\'" . web-mode))
+
 (add-hook 'css-mode-hook 'skewer-css-mode)
 (add-hook 'scss-mode-hook 'skewer-css-mode)
 (add-hook 'scss-mode-hook 'rainbow-mode)

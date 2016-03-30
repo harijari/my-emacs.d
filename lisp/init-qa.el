@@ -1,6 +1,10 @@
 (require-package 'flycheck)
 (require-package 'feature-mode)
 
-(global-flycheck-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
+;; Override default flycheck triggers
+(setq flycheck-check-syntax-automatically '(save idle-change mode-enabled)
+      flycheck-idle-change-delay 0.8)
 
 (provide 'init-qa)

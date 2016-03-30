@@ -5,22 +5,22 @@
 ;; Author: Jarosław Sobiecki <jsobiecki@docent>
 ;; Keywords: 
 
-(require-package 'projectile)
-(require-package 'magit)
-(require-package 'yaml-mode)
-(require-package 'cl)
 (require-package 'powerline)
 (require-package 'powerline-evil)
-(require-package 'dired-narrow)
-(require-package 'git-gutter-fringe)
+
+;; Set the following appearance options early to avoid
+;; flashing an unstyled frame, menu or scroll bars.
+(fringe-mode -1)
+(tooltip-mode t)
+(tool-bar-mode -1)
+;(menu-bar-mode -1)
+(auto-save-mode -1)
+(scroll-bar-mode -1)
+(blink-cursor-mode -1)
+(load-theme 'sanityinc-tomorrow-night)
 
 
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; Enable projectile mode
 (linum-mode t)
-(projectile-global-mode)
-(global-git-gutter-mode +1)
-
 (customize-set-variable 'indent-tabs-mode nil)
 
 (provide 'init-misc)
