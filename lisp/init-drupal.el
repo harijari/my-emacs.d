@@ -8,7 +8,13 @@
                (flycheck-mode t)
                )
              (setq-default js2-basic-offset 2
-                           js2-bounce-indent-p nil )))
+                           js2-bounce-indent-p nil
+                           tab-width 2
+                           indent-tabs-mode nil
+                           css-indent-offset 2
+                           flycheck-phpcs-standard "Drupal and DrupalPractice"
+                           )
+             ))
 (add-hook 'find-file-hook 'auto-insert)
 
 (provide 'init-drupal)

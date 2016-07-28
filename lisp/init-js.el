@@ -11,7 +11,8 @@
 (add-hook 'js2-mode-hook 'tern-mode)
 (after-load 'js2-mode
   (setq-default js2-mode-show-parse-errors nil
-                js2-mode-show-strict-warnings nil))
+                js2-mode-show-strict-warnings nil
+                javascript-eslintrc "~/.eslintrc"))
 
 
 

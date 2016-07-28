@@ -28,13 +28,17 @@
 (require 'init-yaml)
 (require 'init-magit)
 (require 'init-org-mode)
+(require 'init-csv)
  
  
 (require 'init-php)
 (require 'init-js)
 (require 'init-evil)
 (require 'init-drupal)
+(require 'init-editor)
  
 (require 'init-misc)
 (require 'init-hippie)
+(require 'init-dockerfile)
+(require 'init-markdown)
 (require 'init-local)

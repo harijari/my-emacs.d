@@ -3,6 +3,8 @@
 (require-package 'git-gutter-fringe)
 (require-package 'git-blame)
 (require-package 'git-link)
+(require-package 'git-timemachine)
+(require-package 'magit-gh-pulls)
 
 
 (global-git-gutter-mode +1)
@@ -13,6 +15,7 @@
 (global-set-key (kbd "C-x g l") 'magit-log)
 (global-set-key (kbd "C-x g c") 'magit-checkout)
 (global-set-key (kbd "C-x g :") 'magit-git-command)
-
+(add-hook 'magit-mode-hook 'turn-on-magit-gh-pulls)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
 (provide 'init-magit)

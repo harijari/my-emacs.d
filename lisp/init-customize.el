@@ -37,7 +37,23 @@
     ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
  '(ecb-compile-window-width (quote frame) t)
  '(ecb-layout-name "left9" t)
- '(ecb-toggle-layout-sequence (quote ("left13" "left9")) t))
+ '(ecb-toggle-layout-sequence (quote ("left13" "left9")) t)
+ '(org-agenda-files
+   (quote
+    ("/home/jsobiecki/.emacs.d/org-files/bills.org" "/home/jsobiecki/.emacs.d/org-files/business.org" "/home/jsobiecki/.emacs.d/org-files/personal-cal.org" "/home/jsobiecki/.emacs.d/org-files/pesonal-cal.org" "/home/jsobiecki/.emacs.d/org-files/priv.org" "/home/jsobiecki/.emacs.d/org-files/ratioweb-cal.org")))
+ '(safe-local-variable-values
+   (quote
+    ((setq skewer-reload-stylesheets-compile-command "cd app/themes/custom/stargres && compass compile")
+     (setq skewer-reload-stylesheets-compile-command "compass compile")
+     (css-indent-offset 2))))
+ '(sql-connection-alist
+   (quote
+    (("culture"
+      (sql-product
+       (quote mysql))
+      (sql-user "root")
+      (sql-database "culture")
+      (sql-server "db"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
