@@ -23,7 +23,7 @@
 
 ;;; Code:
 (require-package 'projectile)
-(projectile-mode)
+(projectile-global-mode)
 
 
 

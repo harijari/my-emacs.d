@@ -4,4 +4,4 @@
 (add-hook 'org-mode-hook 'flyspell-mode)
 (setq org-agenda-files '("~/.emacs.d/org-files"))
 
-(provide 'init-org-mode)
+ (provide 'init-org-mode)
