@@ -29,6 +29,7 @@
 (require 'init-magit)
 (require 'init-org-mode)
 (require 'init-csv)
+(require 'init-ruby)
  
  
 (require 'init-php)
@@ -36,6 +37,7 @@
 (require 'init-evil)
 (require 'init-drupal)
 (require 'init-editor)
+(require 'init-emmet)
  
 (require 'init-misc)
 (require 'init-hippie)

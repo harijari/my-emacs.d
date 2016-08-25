@@ -28,4 +28,6 @@
 (customize-set-variable 'indent-tabs-mode nil)
 (add-hook 'after-init-hook 'org-agenda-list)
 
+(add-to-list 'auto-mode-alist '("\\.vcl\\'"    . vcl-mode))
+
 (provide 'init-misc)
