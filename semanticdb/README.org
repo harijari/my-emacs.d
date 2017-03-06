@@ -1,1 +1,0 @@
-It's placeholder for empty semanticdb directory

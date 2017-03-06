@@ -6,10 +6,12 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path "~/.emacs.d/experimental/semantic-php")
-(add-to-list 'load-path "~/.emacs.d/experimental/ede-php-autoload")
+(add-to-list 'load-path "~/.emacs.d/experimental/use-package")
+
 (setq custom-file "~/.emacs.d/lisp/init-customize.el")
 
 ;; Packages "stolen" from purcell.
+(require 'use-package)
 (require 'init-customize)
 (require 'init-compat)
 (require 'init-utils)
@@ -38,9 +40,13 @@
 (require 'init-drupal)
 (require 'init-editor)
 (require 'init-emmet)
+(require 'init-dired)
+(require 'init-spell)
  
 (require 'init-misc)
 (require 'init-hippie)
 (require 'init-dockerfile)
 (require 'init-markdown)
+(require 'init-mmm)
 (require 'init-local)
+(put 'narrow-to-region 'disabled nil)

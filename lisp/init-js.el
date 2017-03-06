@@ -8,14 +8,17 @@
 (add-to-list 'auto-mode-alist '("\\.pac\\'"   . js2-mode))
 (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
 
+(defconst preferred-javascript-indent-level 2)
+
+
 (add-hook 'js2-mode-hook 'skewer-mode)
 (add-hook 'js2-mode-hook 'tern-mode)
 (after-load 'js2-mode
   (setq-default js2-mode-show-parse-errors nil
                 js2-mode-show-strict-warnings nil
+                js2-basic-offset 2
+                js2-bounce-indent-p nil
                 javascript-eslintrc "~/.eslintrc"))
-
-
 
 
 (eval-after-load 'tern

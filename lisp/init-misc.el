@@ -5,9 +5,43 @@
 ;; Author: Jarosław Sobiecki <jsobiecki@docent>
 ;; Keywords: 
 
-(require-package 'powerline)
-(require-package 'powerline-evil)
-(require-package 'org-pomodoro)
+
+(use-package powerline
+  :ensure t)
+(use-package powerline-evil
+  :ensure t)
+
+(use-package atom-dark-theme
+  :ensure t)
+
+(use-package column-marker
+  :ensure t)
+
+(use-package iedit
+  :ensure t)
+
+(use-package color-moccur
+  :ensure t
+  :commands (isearch-moccur isearch-all)
+  :bind (("M-s O" . moccur)
+         :map isearch-mode-map
+         ("M-o" . isearch-moccur)
+         ("M-O" . isearch-moccur-all))
+  :init
+  (setq isearch-lazy-highlight t)
+  :config
+  (use-package moccur-edit
+    :ensure t))
+
+(use-package windmove
+  ;; :defer 4
+  :ensure t
+  :config
+  ;; use command key on Mac
+  (windmove-default-keybindings 'super)
+  ;; wrap around at edges
+  (setq windmove-wrap-around t))
+
 
 
 ;; Set the following appearance options early to avoid
@@ -19,7 +53,7 @@
 (auto-save-mode -1)
 (scroll-bar-mode -1)
 (blink-cursor-mode -1)
-(load-theme 'sanityinc-tomorrow-night)
+
 (setq inhibit-splash-screen t)
 (setq create-lockfiles nil)
 
@@ -29,5 +63,13 @@
 (add-hook 'after-init-hook 'org-agenda-list)
 
 (add-to-list 'auto-mode-alist '("\\.vcl\\'"    . vcl-mode))
+
+(setq-default
+ column-number-mode t
+)
+
+(global-auto-revert-mode)
+(setq global-auto-revert-non-file-buffers t
+auto-revert-verbose nil)
 
 (provide 'init-misc)

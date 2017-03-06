@@ -1,12 +1,14 @@
-;;; init-hippie.el --- Hippie configuration          -*- lexical-binding: t; -*-
+(use-package hippie-expand
+  :init
+  (setq hippie-expand-try-functions-list
+        '(try-complete-file-name-partially
+          try-complete-file-name
+          try-expand-dabbrev
+          try-expand-dabbrev-all-buffers
+          try-expand-dabbrev-from-kill))
+  :bind (("M-/" . hippie-expand))
+  )
 
-;; Copyright (C) 2016  Jarosław Sobiecki
 
-;; Author: Jarosław Sobiecki <jsobiecki@docent>
-;; Keywords: abbrev, abbrev, 
-
-
-
-;(global-set-key "S- " 'hippie-expand)
 
 (provide 'init-hippie)

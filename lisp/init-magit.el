@@ -1,7 +1,7 @@
 (require-package 'magit)
 (require-package 'magit-gitflow)
 (require-package 'git-gutter-fringe)
-(require-package 'git-blame)
+;(require-package 'git-blame)
 (require-package 'git-link)
 (require-package 'git-timemachine)
 (require-package 'magit-gh-pulls)
