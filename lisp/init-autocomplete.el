@@ -1,9 +1,17 @@
-(require-package 'ggtags)
-(require-package 'auto-complete)
-(global-auto-complete-mode t)
-(ac-config-default)
-(require-package 'company)
-(add-to-list 'ac-modes 'enh-ruby-mode)
+(use-package ggtags
+  :ensure t
+  )
 
+(use-package auto-complete
+  :ensure t
+  :config
+  (ac-config-default)
+  (add-to-list 'ac-modes 'enh-ruby-mode)
+  (global-auto-complete-mode t)
+  )
+
+(use-package company
+  :ensure t
+  )
 
 (provide 'init-autocomplete)

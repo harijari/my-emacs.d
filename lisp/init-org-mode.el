@@ -1,7 +1,7 @@
 
 (use-package org
   :ensure t
-  :init
+  :config
   (org-babel-do-load-languages
    'org-babel-load-languages
    '(
@@ -24,11 +24,20 @@
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 )
 
+(use-package org-journal
+  :ensure t
+)
+
+(use-package ox-reveal
+  :ensure t
+  )
+
 (require 'org-protocol)
 (server-start)
 
 (add-hook 'org-mode-hook 'flyspell-mode)
 (setq org-agenda-files '("~/.emacs.d/org-files"))
+(setq org-journal-dir "~/.emacs.d/org-files/journal/")
 
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
@@ -38,7 +47,7 @@
          "** TODO %?\n %i\n %a")
         ("e" "Time logging" table-line (file "~/.emacs.d/org-files/time.org")
          "| %^t | ffw | hours |")
-        ("j" "Journal" entry (file+datetree "~/.emacs.d/org-files/journal.org")
+        ("j" "Journal" entry (file+datetree "~/.emacs.d/org-files/journal/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")
       ))
 

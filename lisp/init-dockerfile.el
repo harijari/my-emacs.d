@@ -6,8 +6,17 @@
 ;; Keywords: docker
 
 
-(require-package 'docker)
-(require-package 'dockerfile-mode)
-(require-package 'docker-tramp)
+
+(use-package docker
+  :ensure t
+  )
+
+(use-package dockerfile-mode
+  :ensure t
+  )
+
+(use-package docker-tramp
+  :ensure t
+  )
 
 (provide 'init-dockerfile)

@@ -45,11 +45,13 @@
     (("/home/jsobiecki/workspace/codebase/ratioweb/culture.pl/" "/var/www/html/"))))
  '(package-selected-packages
    (quote
-    (less-css-mode phpcbf iedit dired-sort ede-php-autoload company-restclient ob-restclient column-marker org-bullets ace-jump-mode moccur-edit color-moccur atom-dark-theme dired-sorted org-package mmm-mode markdown-mode powerline evil json-mode php-mode magit skewer-mode flycheck helm auto-complete yard-mode yaml-mode web-mode vcl-mode tern-auto-complete skewer-reload-stylesheets scss-mode robe restclient rainbow-mode projectile powerline-evil php-refactor-mode php-extras php-auto-yasnippets org-pomodoro org-caldav nvm mkdown magit-gitflow magit-gh-pulls js-comint helm-gtags helm-ag git-timemachine git-link git-gutter-fringe git-blame ggtags geben fullframe flycheck-pos-tip feature-mode evil-visualstar evil-leader evil-jumper evil-easymotion eslint-fix enh-ruby-mode emmet-mode ecb drupal-mode doctags dockerfile-mode docker dired-narrow csv-nav csv-mode company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized ac-php ac-js2)))
+    (ox-reveal org-reveal dracula-theme vue-mode xref-js2 vue-html-mode org-journal less-css-mode phpcbf iedit dired-sort ede-php-autoload company-restclient ob-restclient column-marker org-bullets ace-jump-mode moccur-edit color-moccur atom-dark-theme dired-sorted org-package mmm-mode markdown-mode powerline evil json-mode php-mode magit skewer-mode flycheck helm auto-complete yard-mode yaml-mode web-mode vcl-mode tern-auto-complete skewer-reload-stylesheets scss-mode robe restclient rainbow-mode projectile powerline-evil php-refactor-mode php-extras php-auto-yasnippets org-pomodoro org-caldav nvm mkdown magit-gitflow magit-gh-pulls js-comint helm-gtags helm-ag git-timemachine git-link git-gutter-fringe git-blame ggtags geben fullframe flycheck-pos-tip feature-mode evil-visualstar evil-leader evil-jumper evil-easymotion eslint-fix enh-ruby-mode emmet-mode ecb drupal-mode doctags dockerfile-mode docker dired-narrow csv-nav csv-mode company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized ac-php ac-js2)))
  '(phpcbf-standard "PSR2")
  '(safe-local-variable-values
    (quote
-    ((setq skewer-reload-stylesheets-compile-command "cd app/themes/custom/stargres && compass compile")
+    ((geben-path-mappings quote
+			  (("/home/jsobiecki/workspace/codebase/ratioweb/klevia" "/var/www/html/app")))
+     (setq skewer-reload-stylesheets-compile-command "cd app/themes/custom/stargres && compass compile")
      (setq skewer-reload-stylesheets-compile-command "compass compile")
      (css-indent-offset 2))))
  '(sql-connection-alist

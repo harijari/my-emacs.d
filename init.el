@@ -36,6 +36,7 @@
  
 (require 'init-php)
 (require 'init-js)
+(require 'init-reveal)
 (require 'init-evil)
 (require 'init-drupal)
 (require 'init-editor)

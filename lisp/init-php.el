@@ -2,7 +2,7 @@
 (require-package 'ac-php)
 ;(require-package 'php-auto-yasnippets)
 (require-package 'php-extras)
-;(require-package 'ede-php-autoload)
+(require-package 'ede-php-autoload)
 
 (require 'ac-php)
 ;(require 'php-auto-yasnippets)
@@ -18,6 +18,7 @@
                                         ;:init
                                         ;(add-hook 'php-mode-hook 'phpcbf-enable-on-save)
   )
+
 
 (use-package geben
   :ensure t
@@ -35,8 +36,14 @@
                            (define-key php-mode-map  (kbd "C-c C-t") 'ac-php-location-stack-back   ) ;go back
                            (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
                            (ggtags-mode 1)
+
                            ;(payas/ac-setup)
                            ))
 (eval-after-load 'php-mode
   '(require 'php-ext))
+
+(with-eval-after-load 'php-mode
+  (require 'php-current)
+  (define-key php-mode-map (kbd "C-c C--") 'php-current-class)
+  (define-key php-mode-map (kbd "C-c C-=") 'php-current-namespace))
 (provide 'init-php)
