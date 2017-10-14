@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Drupal hook
+# key: dh
+# --
+/**
+ * Implements hook_$1().
+ */
+function `(drupal-module-name)`_${1:name}(${1:$(when drupal-get-function-args (funcall drupal-get-function-args yas-text (drupal-major-version)))}) {
+  $0
+}

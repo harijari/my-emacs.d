@@ -32,8 +32,4 @@
 (setq csv-separators '("," ";" "|" " "))
 
 (provide 'init-csv)
-
-
-
-(provide 'init-csv)
 ;;; init-csv.el ends here

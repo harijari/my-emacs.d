@@ -20,6 +20,12 @@
 (use-package iedit
   :ensure t)
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+
 (use-package color-moccur
   :ensure t
   :commands (isearch-moccur isearch-all)
@@ -41,6 +47,17 @@
   (windmove-default-keybindings 'super)
   ;; wrap around at edges
   (setq windmove-wrap-around t))
+
+;; (use-package sublimity
+;;   :ensure t
+;;   :config
+;;   (progn
+;;     (require 'sublimity-scroll)
+;;     (require 'sublimity-map) ;; experimental
+;;     (require 'sublimity-attractive)
+;; 
+;;     )
+;;   )
 
 
 

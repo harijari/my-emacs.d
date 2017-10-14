@@ -1,15 +1,8 @@
 (require-package 'php-mode)
 (require-package 'ac-php)
-;(require-package 'php-auto-yasnippets)
 (require-package 'php-extras)
 (require-package 'ede-php-autoload)
 
-(require 'ac-php)
-;(require 'php-auto-yasnippets)
-(require 'ede)
-
-
-(global-ede-mode 1)
 
 (use-package phpcbf
   :ensure t
@@ -23,27 +16,45 @@
 (use-package geben
   :ensure t
   )
-     
 
 
+(use-package ede-php-autoload-composer-installers
+  :ensure t
+  :after ede-php-autoload
+  )
+
+(use-package ede-php-autoload-drupal
+  :ensure t
+  :after ede-php-autoload
+  )
+
+
+
+
+(use-package ede-php-autoload
+  :ensure t
+  :init (progn
+          (global-ede-mode 1)
+          (add-hook 'php-mode-hook 'ede-php-autoload-mode)
+          )
+  )
 
 (add-hook 'php-mode-hook '(lambda ()
+                           (require 'ac-php)
+                           (semantic-mode t)
                            (auto-complete-mode t)
-                           (add-to-list 'ac-sources  'ac-source-php )
-                           (yas-global-mode 1)
-
+                           (setq ac-sources   `(ac-source-php))
+                           (ac-php-core-eldoc-setup )
                            (define-key php-mode-map  (kbd "C-c C-]") 'ac-php-find-symbol-at-point)   ;goto define
                            (define-key php-mode-map  (kbd "C-c C-t") 'ac-php-location-stack-back   ) ;go back
-                           (define-key php-mode-map (kbd "C-c C-y") 'yas/create-php-snippet)
-                           (ggtags-mode 1)
-
-                           ;(payas/ac-setup)
+;                          (ggtags-mode 1)
+                           (yas-minor-mode 1)
                            ))
 (eval-after-load 'php-mode
   '(require 'php-ext))
 
 (with-eval-after-load 'php-mode
-  (require 'php-current)
+;;  (require 'php-current)
   (define-key php-mode-map (kbd "C-c C--") 'php-current-class)
   (define-key php-mode-map (kbd "C-c C-=") 'php-current-namespace))
 (provide 'init-php)

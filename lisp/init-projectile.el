@@ -22,9 +22,18 @@
 ;; 
 
 ;;; Code:
-(require-package 'projectile)
-(projectile-global-mode)
+;; (use-package projectile
+;;   :ensure t
+;;   :config
+;;   (progn 
+;; 
+;;     (projectile-global-mode)
+;;     ))
 
+(use-package find-file-in-project
+  :ensure t
+  :bind ("C-x p f" . find-file-in-project)
+  )
 
 
 (provide 'init-projectile)

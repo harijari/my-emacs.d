@@ -1,0 +1,16 @@
+*~
+semanticdb/*
+session.*
+*#
+var/*
+/ac-comphist.dat
+/ede-projects.el
+/bookmarks
+/elpa/ac-html-csswatcher-readme.txt
+/elpa/ac-html-readme.txt
+/elpa/ac-js2-readme.txt
+/network-security.data
+/org-files
+/projectile-bookmarks.eld
+/srecode-map.el
+/tramp

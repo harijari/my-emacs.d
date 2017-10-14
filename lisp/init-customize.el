@@ -34,23 +34,30 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(custom-enabled-themes (quote (adwaita)))
  '(custom-safe-themes
    (quote
     ("6f441c0e5d8199f08eb4b73e9c697710282bcae95e5925b7649ddfa8cea2e24c" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default)))
+ '(delete-selection-mode nil)
  '(ecb-compile-window-width (quote frame) t)
  '(ecb-layout-name "left9" t)
+ '(ecb-options-version "2.50")
  '(ecb-toggle-layout-sequence (quote ("left13" "left9")) t)
+ '(ede-project-directories
+   (quote
+    ("/home/jsobiecki/workspace/codebase/ratioweb/culturebackend/app")))
  '(geben-path-mappings
    (quote
     (("/home/jsobiecki/workspace/codebase/ratioweb/culture.pl/" "/var/www/html/"))))
+ '(indent-tabs-mode nil)
  '(package-selected-packages
    (quote
-    (ox-reveal org-reveal dracula-theme vue-mode xref-js2 vue-html-mode org-journal less-css-mode phpcbf iedit dired-sort ede-php-autoload company-restclient ob-restclient column-marker org-bullets ace-jump-mode moccur-edit color-moccur atom-dark-theme dired-sorted org-package mmm-mode markdown-mode powerline evil json-mode php-mode magit skewer-mode flycheck helm auto-complete yard-mode yaml-mode web-mode vcl-mode tern-auto-complete skewer-reload-stylesheets scss-mode robe restclient rainbow-mode projectile powerline-evil php-refactor-mode php-extras php-auto-yasnippets org-pomodoro org-caldav nvm mkdown magit-gitflow magit-gh-pulls js-comint helm-gtags helm-ag git-timemachine git-link git-gutter-fringe git-blame ggtags geben fullframe flycheck-pos-tip feature-mode evil-visualstar evil-leader evil-jumper evil-easymotion eslint-fix enh-ruby-mode emmet-mode ecb drupal-mode doctags dockerfile-mode docker dired-narrow csv-nav csv-mode company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized ac-php ac-js2)))
+    (dashboard spaceline ag ede-php-autoload-drupal ede-php-autoload-composer-installers sublimity ido-vertical-mode apache-mode org-babel ob-php editorconfig ox-reveal org-reveal dracula-theme vue-mode xref-js2 vue-html-mode org-journal less-css-mode phpcbf iedit dired-sort ede-php-autoload company-restclient ob-restclient column-marker org-bullets ace-jump-mode moccur-edit color-moccur atom-dark-theme dired-sorted org-package mmm-mode markdown-mode powerline evil json-mode php-mode magit skewer-mode flycheck helm auto-complete yard-mode yaml-mode web-mode vcl-mode tern-auto-complete skewer-reload-stylesheets scss-mode robe restclient rainbow-mode projectile powerline-evil php-refactor-mode php-extras php-auto-yasnippets org-pomodoro org-caldav nvm mkdown magit-gitflow magit-gh-pulls js-comint helm-gtags helm-ag git-timemachine git-link git-gutter-fringe git-blame ggtags geben fullframe flycheck-pos-tip feature-mode evil-visualstar evil-leader evil-jumper evil-easymotion eslint-fix enh-ruby-mode emmet-mode ecb drupal-mode doctags dockerfile-mode docker dired-narrow csv-nav csv-mode company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized ac-php ac-js2)))
  '(phpcbf-standard "PSR2")
  '(safe-local-variable-values
    (quote
     ((geben-path-mappings quote
-			  (("/home/jsobiecki/workspace/codebase/ratioweb/klevia" "/var/www/html/app")))
+                          (("/home/jsobiecki/workspace/codebase/ratioweb/klevia" "/var/www/html/app")))
      (setq skewer-reload-stylesheets-compile-command "cd app/themes/custom/stargres && compass compile")
      (setq skewer-reload-stylesheets-compile-command "compass compile")
      (css-indent-offset 2))))
@@ -61,7 +68,13 @@
        (quote mysql))
       (sql-user "root")
       (sql-database "culture")
-      (sql-server "db"))))))
+      (sql-server "db"))
+     ("settled"
+      (sql-product
+       (quote mysql))
+      (sql-user "drupal")
+      (sql-database "drupal")
+      (sql-server "127.0.0.1"))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -6,6 +6,7 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path "~/.emacs.d/experimental/semantic-php")
+(load "~/.emacs.d/experimental/semantic-php/loaddefs.el")
 (add-to-list 'load-path "~/.emacs.d/experimental/use-package")
 
 (setq custom-file "~/.emacs.d/lisp/init-customize.el")
@@ -49,5 +50,10 @@
 (require 'init-dockerfile)
 (require 'init-markdown)
 (require 'init-mmm)
+(require 'init-apache)
+(require 'init-theme)
+(require 'init-snippets)
 (require 'init-local)
+
 (put 'narrow-to-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
