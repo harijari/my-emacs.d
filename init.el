@@ -33,6 +33,7 @@
 (require 'init-org-mode)
 (require 'init-csv)
 (require 'init-ruby)
+(require 'init-latex)
  
  
 (require 'init-php)
@@ -57,3 +58,4 @@
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
