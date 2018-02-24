@@ -43,11 +43,11 @@
                            (require 'ac-php)
                            (semantic-mode t)
                            (auto-complete-mode t)
-                           (setq ac-sources   `(ac-source-php))
+                           (setq ac-sources `(ac-source-php))
                            (ac-php-core-eldoc-setup )
                            (define-key php-mode-map  (kbd "C-c C-]") 'ac-php-find-symbol-at-point)   ;goto define
                            (define-key php-mode-map  (kbd "C-c C-t") 'ac-php-location-stack-back   ) ;go back
-;                          (ggtags-mode 1)
+                           (ggtags-mode 1)
                            (yas-minor-mode 1)
                            ))
 (eval-after-load 'php-mode

@@ -5,7 +5,7 @@
 (use-package auto-complete
   :ensure t
   :config
-;  (ac-config-default)
+  (ac-config-default)
   (add-to-list 'ac-modes 'enh-ruby-mode)
 ;  (global-auto-complete-mode t)
 ;  (add-to-list 'ac-sources 'ac-source-semantic)

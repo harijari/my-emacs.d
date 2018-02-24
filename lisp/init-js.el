@@ -42,6 +42,17 @@
        (tern-ac-setup)))
   )
 
+(use-package ac-js2
+  :ensure t
+  :init
+  (add-hook 'js2-mode-hook 'ac-js2-mode)
+  :config
+  (setq ac-js2-evaluate-calls t)
+  
+  )
+
+
+
 (use-package vue-mode
   :ensure t
   :mode ("\\.vue\\'" . vue-mode)
