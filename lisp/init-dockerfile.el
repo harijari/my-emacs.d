@@ -11,6 +11,13 @@
   :ensure t
   )
 
+;; (use-package lsp-dockerfile
+;;   :ensure t
+;;   :hook (
+;;          (dockerfile-mode . lsp-dockerfile-enable)
+;;          )
+;;   )
+
 (use-package dockerfile-mode
   :ensure t
   )

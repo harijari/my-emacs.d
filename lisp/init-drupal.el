@@ -12,6 +12,7 @@
                            tab-width 2
                            indent-tabs-mode nil
                            css-indent-offset 2
+                           c-basic-offset 2
                            flycheck-phpcs-standard "Drupal and DrupalPractice"
                            phpcbf-standard 'Drupal
                            flycheck-php-phpmd-executable "drupal-phpmd"

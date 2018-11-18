@@ -14,16 +14,26 @@
 (use-package atom-dark-theme
   :ensure t)
 
-(use-package column-marker
-  :ensure t)
-
 (use-package iedit
   :ensure t)
+
+(use-package artbollocks-mode
+  :ensure t)
+
+(use-package langtool
+  :ensure t
+  :init
+    (setq langtool-language-tool-jar "/home/jsobiecki/opt/languagetool/languagetool-commandline.jar")
+  )
 
 (use-package editorconfig
   :ensure t
   :config
   (editorconfig-mode 1))
+
+(use-package diffview
+  :ensure t
+  )
 
 
 (use-package color-moccur
@@ -58,6 +68,16 @@
 ;; 
 ;;     )
 ;;   )
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+(setq dashboard-items '((recents  . 5)
+                        (bookmarks . 5)
+                        (projects . 5)
+                        (agenda . 5)
+                        (registers . 5)))
+  )
 
 
 

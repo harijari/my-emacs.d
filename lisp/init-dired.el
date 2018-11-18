@@ -7,7 +7,5 @@
 
 (use-package dired-narrow
   :ensure t)
-(use-package dired-sort
-  :ensure t)
 
 (provide 'init-dired)

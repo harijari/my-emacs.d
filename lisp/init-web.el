@@ -18,6 +18,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.twig\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html.twig\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl.php\\'" . web-mode))
 
 ; Register restclient as company backend
 ;(add-to-list 'company-backends 'company-restclient)
@@ -41,6 +42,41 @@
 ))
 
 
-(add-hook 'scss-mode-hook 'skewer-css-mode)
-(add-hook 'html-mode-hook 'skewer-html-mode)
+
+(use-package skewer-mode
+  :ensure t
+  :hook (
+         (scss-mode . skewer-css-mode)
+         (html-mode . skewer-html-mode)
+
+         )
+  :config
+  
+  )
+
+(use-package lsp-html
+  :ensure t
+  :hook (
+         (html-mode . lsp-html-enable)
+         (web-mode . lsp-html-enable)
+         )
+  )
+
+(use-package lsp-css
+  :ensure t
+  :hook (
+         (css-mode . my-css-mode-setup)
+         (less-mode . lsp-less-enable)
+         (sass-mode . lsp-scss-enable)
+         (scss-mode . lsp-scss-enable)
+         )
+  :init
+  (defun my-css-mode-setup ()
+  (when (eq major-mode 'css-mode)
+    ;; Only enable in strictly css-mode, not scss-mode (css-mode-hook
+    ;; fires for scss-mode because scss-mode is derived from css-mode)
+    (lsp-css-enable)))
+  
+  )
+
 (provide 'init-web)

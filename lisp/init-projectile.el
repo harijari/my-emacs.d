@@ -22,13 +22,13 @@
 ;; 
 
 ;;; Code:
-;; (use-package projectile
-;;   :ensure t
-;;   :config
-;;   (progn 
-;; 
-;;     (projectile-global-mode)
-;;     ))
+ (use-package projectile
+   :ensure t
+   :config
+   (progn 
+ 
+     (projectile-global-mode)
+     ))
 
 (use-package find-file-in-project
   :ensure t

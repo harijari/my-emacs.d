@@ -5,10 +5,7 @@
 (package-initialize)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path "~/.emacs.d/experimental/semantic-php")
-(load "~/.emacs.d/experimental/semantic-php/loaddefs.el")
 (add-to-list 'load-path "~/.emacs.d/experimental/use-package")
-
 (setq custom-file "~/.emacs.d/lisp/init-customize.el")
 
 ;; Packages "stolen" from purcell.
@@ -22,8 +19,9 @@
 
 (require 'init-projectile)
 (require 'init-autocomplete)
-(require 'init-ecb)
-(require 'init-semantic)
+(require 'init-language-server)
+;(require 'init-ecb)
+;(require 'init-semantic)
 (require 'init-navigation)
 (require 'init-helm)
 (require 'init-qa)
@@ -34,6 +32,7 @@
 (require 'init-csv)
 (require 'init-ruby)
 (require 'init-latex)
+(require 'init-varnish)
  
  
 (require 'init-php)

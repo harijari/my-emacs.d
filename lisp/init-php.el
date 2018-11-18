@@ -1,8 +1,10 @@
-(require-package 'php-mode)
-(require-package 'ac-php)
-(require-package 'php-extras)
-(require-package 'ede-php-autoload)
+(use-package php-mode
+  :ensure t
+  )
 
+(use-package php-extras
+  :ensure t
+  )
 
 (use-package phpcbf
   :ensure t
@@ -12,10 +14,45 @@
                                         ;(add-hook 'php-mode-hook 'phpcbf-enable-on-save)
   )
 
+;(use-package phpunit
+;  :ensure t
+;  )
+;(use-package lsp-php
+;  :ensure t
+;  :demand
+;  :hook (
+;         (php-mode . lsp-mode)
+;         (php-mode . lsp-php-enable)
+;         )
+;  :config
+;  (setq lsp-php-show-file-parse-notifications t)
+;  (setq lsp-php-workspace-root-detectors '(lsp-php-root-projectile lsp-php-root-composer-json "index.php" "robots.txt")))
+
+
 
 (use-package geben
   :ensure t
   )
+
+(use-package ac-php
+  :ensure t
+  )
+
+;(use-package lsp-php
+;  :ensure t
+;  :init (progn
+;          (add-hook 'php-mode-hook 'lsp-mode)
+;          )
+;  )
+;
+;(use-package lsp-ui
+;  :ensure t
+;  :init (progn
+;          (add-hook 'lsp-ui-mode-hook 'lsp-ui-mode)
+;          )
+;  )
+
+
 
 
 (use-package ede-php-autoload-composer-installers

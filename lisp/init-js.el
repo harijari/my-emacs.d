@@ -48,7 +48,6 @@
   (add-hook 'js2-mode-hook 'ac-js2-mode)
   :config
   (setq ac-js2-evaluate-calls t)
-  
   )
 
 
@@ -57,6 +56,22 @@
   :ensure t
   :mode ("\\.vue\\'" . vue-mode)
   )
+
+(use-package lsp-vue
+  :ensure t
+  :hook (
+         vue-mode . lsp-vue-mmm-enable
+         )
+  )
+
+;(use-package lsp-javascript-flow
+;  :ensure t
+;  :hook (
+;         (js-mode . lsp-javascript-flow-enable)
+;         (js2-mode . lsp-javascript-flow-enable)
+;         (js3-mode . lsp-javascript-flow-enable)
+;         )
+;  )
 
 (use-package xref-js2
   :ensure t
