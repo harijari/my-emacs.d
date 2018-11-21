@@ -16,7 +16,6 @@
 (require 'init-site-lisp)
 (require 'init-elpa)
 
-
 (require 'init-projectile)
 (require 'init-autocomplete)
 (require 'init-language-server)

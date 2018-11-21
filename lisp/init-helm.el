@@ -1,14 +1,21 @@
-(require-package 'helm)
-(require-package 'helm-gtags)
-(require-package 'helm-ag)
+(use-package helm-ag
+  :ensure t
+  )
 
-(require 'helm-config)
+(use-package helm-gtags
+  :ensure t
+  )
 
-(global-set-key (kbd "M-x")                          'undefined)
-(global-set-key (kbd "M-x")                          'helm-M-x)
-(global-set-key (kbd "C-x r b")                      'helm-filtered-bookmarks)
-(global-set-key (kbd "C-x r o")                      'helm-do-ag-this-file)
-(global-set-key (kbd "C-x r p")                      'helm-do-ag-project-root)
-(helm-mode 1)
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1)
+  :bind (
+         ("M-x" . helm-M-x)
+         ("C-x r b" . helm-filtered-bookmarks)
+         ("C-x r o" . helm-do-ag-this-file)
+         ("C-x r p" . helm-do-ag-project-root)
+         )
+  )
 
 (provide 'init-helm)

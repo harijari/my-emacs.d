@@ -25,10 +25,11 @@
  (use-package projectile
    :ensure t
    :config
-   (progn 
- 
-     (projectile-global-mode)
-     ))
+      (projectile-mode +1)
+   :bind (
+          ("C-c p" . projectile-command-map)
+          )
+ )
 
 (use-package find-file-in-project
   :ensure t
