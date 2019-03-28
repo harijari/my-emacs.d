@@ -28,55 +28,55 @@
   (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook scss-mode-hook))
 (add-hook hook 'rainbow-mode)))
 
-(add-hook 'restclient-mode-hook '(lambda ()
-(setq restclient-log-request 't)
-(setq restclient-inhibit-cookies 't)
-))
+;(add-hook 'restclient-mode-hook '(lambda ()
+;(setq restclient-log-request 't)
+;(setq restclient-inhibit-cookies 't)
+;))
 
 
 
-(add-hook 'css-mode-hook '(lambda ()
-  (skewer-css-mode)
-  (skewer-reload-stylesheets-mode)
-  (skewer-reload-stylesheets-reload-on-save)
-))
+;(add-hook 'css-mode-hook '(lambda ()
+;  (skewer-css-mode)
+;  (skewer-reload-stylesheets-mode)
+;  (skewer-reload-stylesheets-reload-on-save)
+;))
 
 
 
-(use-package skewer-mode
-  :ensure t
-  :hook (
-         (scss-mode . skewer-css-mode)
-         (html-mode . skewer-html-mode)
-
-         )
-  :config
-  
-  )
-
-(use-package lsp-html
-  :ensure t
-  :hook (
-         (html-mode . lsp-html-enable)
-         (web-mode . lsp-html-enable)
-         )
-  )
-
-(use-package lsp-css
-  :ensure t
-  :hook (
-         (css-mode . my-css-mode-setup)
-         (less-mode . lsp-less-enable)
-         (sass-mode . lsp-scss-enable)
-         (scss-mode . lsp-scss-enable)
-         )
-  :init
-  (defun my-css-mode-setup ()
-  (when (eq major-mode 'css-mode)
-    ;; Only enable in strictly css-mode, not scss-mode (css-mode-hook
-    ;; fires for scss-mode because scss-mode is derived from css-mode)
-    (lsp-css-enable)))
-  
-  )
+;(use-package skewer-mode
+;  :ensure t
+;  :hook (
+;         (scss-mode . skewer-css-mode)
+;         (html-mode . skewer-html-mode)
+;
+;         )
+;  :config
+;  
+;  )
+;
+;(use-package lsp-html
+;  :ensure t
+;  :hook (
+;         (html-mode . lsp-html-enable)
+;         (web-mode . lsp-html-enable)
+;         )
+;  )
+;
+;(use-package lsp-css
+;  :ensure t
+;  :hook (
+;         (css-mode . my-css-mode-setup)
+;         (less-mode . lsp-less-enable)
+;         (sass-mode . lsp-scss-enable)
+;         (scss-mode . lsp-scss-enable)
+;         )
+;  :init
+;  (defun my-css-mode-setup ()
+;  (when (eq major-mode 'css-mode)
+;    ;; Only enable in strictly css-mode, not scss-mode (css-mode-hook
+;    ;; fires for scss-mode because scss-mode is derived from css-mode)
+;    (lsp-css-enable)))
+;  
+;  )
 
 (provide 'init-web)

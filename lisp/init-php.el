@@ -30,9 +30,9 @@
 
 
 
-(use-package geben
-  :ensure t
-  )
+;(use-package geben
+;  :ensure t
+;  )
 
 (use-package ac-php
   :ensure t
@@ -52,6 +52,9 @@
 ;          )
 ;  )
 
+(use-package flycheck-phpstan
+  :ensure t
+  )
 
 
 
@@ -64,8 +67,6 @@
   :ensure t
   :after ede-php-autoload
   )
-
-
 
 
 (use-package ede-php-autoload

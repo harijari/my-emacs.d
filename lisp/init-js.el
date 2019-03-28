@@ -19,6 +19,14 @@
   
  )
 
+(use-package js2-refactor
+  :ensure t
+  :hook (
+         js2-mode . js2-refactor-mode
+         )
+  
+  )
+
 (use-package json-mode
   :ensure t
   )

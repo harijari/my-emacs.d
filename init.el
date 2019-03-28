@@ -43,6 +43,8 @@
 (require 'init-emmet)
 (require 'init-dired)
 (require 'init-spell)
+
+(require 'init-k8)
  
 (require 'init-misc)
 (require 'init-hippie)
