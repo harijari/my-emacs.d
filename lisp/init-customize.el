@@ -34,6 +34,8 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(custom-enabled-themes (quote (wombat)))
  '(custom-safe-themes
    (quote
@@ -50,21 +52,27 @@
    (quote
     (("/home/jsobiecki/workspace/codebase/ratioweb/culture.pl/" "/var/www/html/"))))
  '(indent-tabs-mode nil)
+ '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
  '(org-agenda-files
    (quote
     ("/home/jsobiecki/.emacs.d/org-files/journal.org" "/home/jsobiecki/.emacs.d/org-files/bills.org" "/home/jsobiecki/.emacs.d/org-files/business.org" "/home/jsobiecki/.emacs.d/org-files/ceramiki.org" "/home/jsobiecki/.emacs.d/org-files/culture.org" "/home/jsobiecki/.emacs.d/org-files/daily-plan.org" "/home/jsobiecki/.emacs.d/org-files/note.org" "/home/jsobiecki/.emacs.d/org-files/personal-cal.org" "/home/jsobiecki/.emacs.d/org-files/pesonal-cal.org" "/home/jsobiecki/.emacs.d/org-files/pomodoro.org" "/home/jsobiecki/.emacs.d/org-files/priv.org" "/home/jsobiecki/.emacs.d/org-files/ratioweb-cal.org" "/home/jsobiecki/.emacs.d/org-files/settled.org" "/home/jsobiecki/.emacs.d/org-files/time.org" "/home/jsobiecki/.emacs.d/org-files/trening.org")))
  '(package-selected-packages
    (quote
-    (k8s-mode find-file-in-project auctex dashboard spaceline ag ede-php-autoload-drupal ede-php-autoload-composer-installers sublimity ido-vertical-mode apache-mode org-babel ob-php editorconfig ox-reveal org-reveal dracula-theme vue-mode xref-js2 vue-html-mode org-journal less-css-mode phpcbf iedit dired-sort ede-php-autoload company-restclient ob-restclient column-marker org-bullets ace-jump-mode moccur-edit color-moccur atom-dark-theme dired-sorted org-package mmm-mode markdown-mode powerline evil json-mode php-mode magit skewer-mode flycheck helm auto-complete yard-mode yaml-mode web-mode vcl-mode tern-auto-complete skewer-reload-stylesheets scss-mode robe restclient rainbow-mode projectile powerline-evil php-refactor-mode php-extras php-auto-yasnippets org-pomodoro org-caldav nvm mkdown magit-gitflow magit-gh-pulls js-comint helm-gtags helm-ag git-timemachine git-link git-gutter-fringe git-blame ggtags geben fullframe flycheck-pos-tip feature-mode evil-visualstar evil-leader evil-jumper evil-easymotion eslint-fix enh-ruby-mode emmet-mode ecb drupal-mode doctags dockerfile-mode docker dired-narrow csv-nav csv-mode company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized ac-php ac-js2)))
+    (php-skeleton lsp-php lsp-ui lsp-vue k8s-mode find-file-in-project auctex dashboard spaceline ag ede-php-autoload-drupal ede-php-autoload-composer-installers sublimity ido-vertical-mode apache-mode org-babel ob-php editorconfig ox-reveal org-reveal dracula-theme vue-mode xref-js2 vue-html-mode org-journal less-css-mode phpcbf iedit dired-sort ede-php-autoload company-restclient ob-restclient column-marker org-bullets ace-jump-mode moccur-edit color-moccur atom-dark-theme dired-sorted org-package mmm-mode markdown-mode powerline evil json-mode php-mode magit skewer-mode flycheck helm auto-complete yard-mode yaml-mode web-mode vcl-mode tern-auto-complete skewer-reload-stylesheets scss-mode robe restclient rainbow-mode projectile powerline-evil php-refactor-mode php-extras php-auto-yasnippets org-pomodoro org-caldav nvm mkdown magit-gitflow magit-gh-pulls js-comint helm-gtags helm-ag git-timemachine git-link git-gutter-fringe git-blame ggtags geben fullframe flycheck-pos-tip feature-mode evil-visualstar evil-leader evil-jumper evil-easymotion eslint-fix enh-ruby-mode emmet-mode ecb drupal-mode doctags dockerfile-mode docker dired-narrow csv-nav csv-mode company color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized ac-php ac-js2)))
  '(phpcbf-standard "PSR2")
  '(safe-local-variable-values
    (quote
-    ((phpstan-working-dir root)
+    ((phpstan-level . 1)
+     (phpstan-config-file root . "/home/jsobiecki/workspace/codebase/ratioweb/dwi/phpstan.neon")
+     (phpstan-working-dir root . "/home/jsobiecki/workspace/codebase/ratioweb/dwi/")
+     (phpstan-executable . /home/jsobiecki/\.config/composer/vendor/bin/phpstan)
+     (phpstan-working-dir root)
      (geben-path-mappings quote
                           (("/home/jsobiecki/workspace/codebase/ratioweb/klevia" "/var/www/html/app")))
      (setq skewer-reload-stylesheets-compile-command "cd app/themes/custom/stargres && compass compile")
      (setq skewer-reload-stylesheets-compile-command "compass compile")
      (css-indent-offset 2))))
+ '(show-paren-mode t)
  '(sql-connection-alist
    (quote
     (("culture"
@@ -78,10 +86,12 @@
        (quote mysql))
       (sql-user "drupal")
       (sql-database "drupal")
-      (sql-server "127.0.0.1"))))))
+      (sql-server "127.0.0.1")))))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:foreground "#D8DEE9" :background "#1B2B34"))))
+ '(company-tooltip ((t (:background "RoyalBlue4" :foreground "#1d1f21")))))

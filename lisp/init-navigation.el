@@ -13,6 +13,10 @@
   :bind ("M-C-." . ace-jump-mode)
   )
 
+(use-package treemacs
+  :ensure t
+  )
+
 ;; (use-package ido-vertical-mode
 ;;   :ensure t
 ;;   :config
