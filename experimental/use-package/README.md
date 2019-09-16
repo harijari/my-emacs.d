@@ -11,6 +11,11 @@ created it because I have over 80 packages that I use in Emacs, and things
 were getting difficult to manage.  Yet with this utility my total load time is
 around 2 seconds, with no loss of functionality!
 
+**NOTE**: `use-package` is **not** a package manager! Although `use-package`
+does have the useful capability to interface with package managers (see
+[below](#package-installation)), its primary purpose is for the configuration
+and loading of packages.
+
 Notes for users upgrading to 2.x are located [at the bottom](#upgrading-to-2x).
 
 ## Installing use-package
@@ -118,8 +123,8 @@ The `:bind` keyword takes either a cons or a list of conses:
 
 The `:commands` keyword likewise takes either a symbol or a list of symbols.
 
-NOTE: Special keys like `tab` or `F1`-`Fn` can be written in square brackets,
-i.e. `[tab]` instead of `"tab"`. The syntax for the keybindings is similar to
+**NOTE**: inside strings, special keys like `tab` or `F1`-`Fn` have to be written inside angle brackets, e.g. `"C-<up>"`.
+Standalone special keys (and some combinations) can be written in square brackets, e.g. `[tab]` instead of `"<tab>"`. The syntax for the keybindings is similar to
 the "kbd" syntax: see [https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-Rebinding.html](https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-Rebinding.html)
 for more information.
 
@@ -216,7 +221,7 @@ cells, or a string or regexp:
 ```
 
 If you aren't using `:commands`, `:bind`, `:bind*`, `:bind-keymap`,
-`:bind-keymap*`, `:mode`, or `:interpreter` (all of which imply `:defer`; see
+`:bind-keymap*`, `:mode`, `:interpreter`, or `:hook` (all of which imply `:defer`; see
 the docstring for `use-package` for a brief description of each), you can
 still defer loading with the `:defer` keyword:
 
@@ -247,7 +252,7 @@ that `:magic-fallback` has a lower priority than `:mode`. For example:
   :load-path "site-lisp/pdf-tools/lisp"
   :magic ("%PDF" . pdf-view-mode)
   :config
-  (pdf-tools-install))
+  (pdf-tools-install :no-query))
 ```
 
 This registers an autoloaded command for `pdf-view-mode`, defers loading of
@@ -313,7 +318,7 @@ The `:custom` keyword allows customization of package custom variables.
 
 The documentation string is not mandatory.
 
-**NOTE**: These are only for people who wish to keep customizations with their
+**NOTE**: these are only for people who wish to keep customizations with their
 accompanying use-package declarations. Functionally, the only benefit over
 using `setq` in a `:config` block is that customizations might execute code
 when values are assigned. If you currently use `M-x customize-option` and save
@@ -395,7 +400,7 @@ or stop loading something you're not using at the present time:
 When byte-compiling your `.emacs` file, disabled declarations are omitted
 from the output entirely, to accelerate startup times.
 
-Note that `:when` is provided as an alias for `:if`, and `:unless foo` means
+**NOTE**: `:when` is provided as an alias for `:if`, and `:unless foo` means
 the same thing as `:if (not foo)`. For example, the following will also stop
 `:ensure` from happening on Mac systems:
 
@@ -453,7 +458,7 @@ When you nest selectors, such as `(:any (:all foo bar) (:all baz quux))`, it
 means that the package will be loaded when either both `foo` and `bar` have
 been loaded, or both `baz` and `quux` have been loaded.
 
-Note: Pay attention if you set `use-package-always-defer` to t, and also use
+**NOTE**: pay attention if you set `use-package-always-defer` to t, and also use
 the `:after` keyword, as you will need to specify how the declared package is
 to be loaded: e.g., by some `:bind`. If you're not using one of tho mechanisms
 that registers autoloads, such as `:bind` or `:hook`, and your package manager
@@ -466,7 +471,7 @@ While the `:after` keyword delays loading until the dependencies are loaded,
 the somewhat simpler `:requires` keyword simply never loads the package if the
 dependencies are not available at the time the `use-package` declaration is
 encountered. By "available" in this context it means that `foo` is available
-of `(featurep 'foo)` evaulates to a non-nil value. For example:
+if `(featurep 'foo)` evaluates to a non-nil value. For example:
 
 ``` elisp
 (use-package abbrev
@@ -552,7 +557,7 @@ strings.  If the path is relative, it is expanded within
   :commands R)
 ```
 
-Note that when using a symbol or a function to provide a dynamically generated
+**NOTE**: when using a symbol or a function to provide a dynamically generated
 list of paths, you must inform the byte-compiler of this definition so the
 value is available at byte-compilation time.  This is done by using the
 special form `eval-and-compile` (as opposed to `eval-when-compile`).  Further,
@@ -664,8 +669,7 @@ You can use `use-package` to load packages from ELPA with `package.el`. This
 is particularly useful if you share your `.emacs` among several machines; the
 relevant packages are downloaded automatically once declared in your `.emacs`.
 The `:ensure` keyword causes the package(s) to be installed automatically if
-not already present on your system (set `(setq use-package-always-ensure t)`
-if you wish this behavior to be global for all packages):
+not already present on your system:
 
 ``` elisp
 (use-package magit
@@ -680,7 +684,15 @@ If you need to install a different package from the one named by
   :ensure auctex)
 ```
 
-Note that `:ensure` will install a package if it is not already installed, but
+Enable `use-package-always-ensure` if you wish this behavior to be global
+for all packages:
+
+``` elisp
+(require 'use-package-ensure)
+(setq use-package-always-ensure t)
+```
+
+**NOTE**: `:ensure` will install a package if it is not already installed, but
 it does not keep it up-to-date. If you want to keep your packages updated
 automatically, one option is to use
 [auto-package-update](https://github.com/rranelli/auto-package-update.el),
@@ -798,7 +810,7 @@ Here’s an example of usage:
 
 This will expect a global binary package to exist called `rg`. If it
 does not, it will use your system package manager (using the package
-[`system-packages`](https://github.com/jabranham/system-packages)) to
+[`system-packages`](https://gitlab.com/jabranham/system-packages)) to
 attempt an install of a binary by the same name asyncronously. For
 example, for most `macOS` users this would call: `brew install rg`.
 
@@ -846,6 +858,15 @@ a file path by providing a string like so:
   :ensure-system-package
   ("/Applications/Dash.app" . "brew cask install dash"))
 ```
+
+`:ensure-system-package` will use `system-packages-install` to install
+system packages, except where a custom command has been specified, in
+which case it will be executed verbatim by `async-shell-command`.
+
+Configuration variables `system-packages-package-manager` and
+`system-packages-use-sudo` will be honoured, but not for custom
+commands. Custom commands should include the call to sudo in the
+command if needed.
 
 ### `(use-package-chords)`
 
@@ -1013,7 +1034,7 @@ timer to fire, this is the sequence of events:
 It's possible that the user could use `featurep` in their idle to test for
 this case, but that's a subtlety I'd rather avoid.
 
-## :defer now accepts an optional integer argument
+## :defer now accepts an optional numeric argument
 
 `:defer [N]` causes the package to be loaded -- if it has not already been --
 after `N` seconds of idle time.
@@ -1035,7 +1056,7 @@ will 1) make the byte-compiler happy (it won't complain about functions whose
 definitions are unknown because you have them within a guard block), and 2)
 allow you to define code that can be used in an `:if` test.
 
-Note that whatever is specified within `:preface` is evaluated both at load
+**NOTE**: whatever is specified within `:preface` is evaluated both at load
 time and at byte-compilation time, in order to ensure that definitions are
 seen by both the Lisp evaluator and the byte-compiler, so you should avoid
 having any side-effects in your preface, and restrict it merely to symbol
