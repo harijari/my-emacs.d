@@ -19,6 +19,7 @@
 (require 'init-projectile)
 (require 'init-autocomplete)
 (require 'init-language-server)
+(require 'init-dap)
 ;(require 'init-ecb)
 ;(require 'init-semantic)
 (require 'init-navigation)
@@ -32,6 +33,8 @@
 (require 'init-ruby)
 (require 'init-latex)
 (require 'init-varnish)
+(require 'init-go)
+(require 'init-gitlab)
  
  
 (require 'init-php)
