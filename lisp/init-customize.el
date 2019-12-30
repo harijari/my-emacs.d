@@ -52,6 +52,7 @@
    (quote
     (("/home/jsobiecki/workspace/codebase/ratioweb/culture.pl/" "/var/www/html/"))))
  '(indent-tabs-mode nil)
+ '(lsp-enable-file-watchers nil)
  '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
  '(org-agenda-files
    (quote
@@ -93,5 +94,5 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:foreground "#D8DEE9" :background "#1B2B34"))))
+ '(default ((t (:foreground "#D8DEE9" :background "#1B2B34" :family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 113 :width normal))))
  '(company-tooltip ((t (:background "RoyalBlue4" :foreground "#1d1f21")))))

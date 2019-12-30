@@ -7,6 +7,7 @@
 
   (custom-set-variables
   '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
+  '(lsp-enable-file-watchers nil)
   )
   :commands (lsp lsp-deferred))
 
@@ -38,5 +39,10 @@
   :ensure t
   :commands lsp-treemacs-errors-list
   )
+
+(custom-set-variables
+ '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
+ '(lsp-enable-file-watchers nil)
+ )
 
 (provide 'init-language-server)
