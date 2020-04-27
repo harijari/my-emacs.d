@@ -7,11 +7,15 @@
 
   (custom-set-variables
   '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
+  '(lsp-intelephense-license-key "00V44OWGK0WYIP0")
   '(lsp-enable-file-watchers nil)
+  '(lsp-enable-which-key-integration)
   )
   :commands (lsp lsp-deferred))
 
-
+(use-package posframe
+  :ensure t
+  )
 
 
 ;; optionally
@@ -42,6 +46,7 @@
 
 (custom-set-variables
  '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
+ '(lsp-intelephense-license-key "00V44OWGK0WYIP0")
  '(lsp-enable-file-watchers nil)
  )
 

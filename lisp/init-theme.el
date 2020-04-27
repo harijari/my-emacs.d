@@ -1,10 +1,10 @@
 (global-linum-mode t)
 
-(use-package oceanic-theme
-  :ensure t
-  :config
-    (load-theme 'oceanic t)
-  )
+;(use-package oceanic-theme
+;  :ensure t
+;  :config
+;    (load-theme 'oceanic t)
+;  )
 
 
 (use-package spaceline
@@ -15,6 +15,12 @@
   (require 'spaceline-config)
   )
 
+
+(use-package dracula-theme
+  :ensure t
+  :config
+    (load-theme 'dracula t)
+  )
 
 
 

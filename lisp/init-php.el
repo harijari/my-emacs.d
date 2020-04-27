@@ -2,6 +2,7 @@
   :ensure t
   :mode
   ("\\.php\\'" . php-mode)
+  :hook ((php-mode) . flycheck-mode)
   :config
   (require 'dap-php)
   (dap-php-setup)
@@ -24,9 +25,9 @@
  )
 
 
-;(use-package flycheck-phpstan
-;  :ensure t
-;  )
+(use-package flycheck-phpstan
+  :ensure t
+  )
 
 (use-package flycheck-phpstan
   :ensure t
@@ -48,8 +49,6 @@
                            ;(ggtags-mode 1)
                            (yas-minor-mode 1)
                            ))
-;(eval-after-load 'php-mode
-;  '(require 'php-ext))
 
 (with-eval-after-load 'php-mode
 ;;  (require 'php-current)

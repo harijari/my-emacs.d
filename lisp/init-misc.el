@@ -11,6 +11,11 @@
 (use-package powerline-evil
   :ensure t)
 
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
 (use-package atom-dark-theme
   :ensure t)
 
@@ -34,6 +39,17 @@
 (use-package diffview
   :ensure t
   )
+
+(use-package undo-tree
+  :defer t
+  :ensure t
+  :diminish undo-tree-mode
+  :config
+  (progn
+    (global-undo-tree-mode)
+    (setq undo-tree-visualizer-timestamps t)
+    (setq undo-tree-visualizer-diff t)))
+
 
 
 (use-package color-moccur

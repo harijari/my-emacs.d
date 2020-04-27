@@ -13,11 +13,11 @@
                            indent-tabs-mode nil
                            css-indent-offset 2
                            c-basic-offset 2
-                           flycheck-phpcs-standard "Drupal,DrupalPractice"
+                           ;flycheck-phpcs-standard "DrupalPractice"
                            phpcbf-standard "Drupal"
                            flycheck-php-phpmd-executable "drupal-phpmd"
                            flycheck-phpmd-rulesets '("cleancode" "codesize" "design" "unusedcode")
-                           drupal/phpcs-standard "Drupal,DrupalPractice"
+                           drupal/phpcs-standard "DrupalPractice"
                            )
              ))
 ;(add-hook 'find-file-hook 'auto-insert)

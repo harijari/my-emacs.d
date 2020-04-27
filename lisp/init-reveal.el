@@ -1,4 +1,12 @@
-(use-package ox-reveal
+(use-package org-re-reveal
+  :ensure t
+  )
+
+(use-package org-re-reveal-ref
+  :ensure t
+  )
+
+(use-package oer-reveal
   :ensure t
   )
 
