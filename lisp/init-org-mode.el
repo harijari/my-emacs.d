@@ -5,13 +5,31 @@
    (require 'org-protocol)
    (server-start)
    (add-hook 'org-mode-hook 'flyspell-mode)
-   (setq org-agenda-files '("~/.emacs.d/org-files"))
-     
+   (setq org-agenda-custom-commands 
+      '(("c" "Make a call" tags-todo "@call"
+         ((org-agenda-overriding-header "Call list")))
+        ("E" "Make a email" tags-todo "@email"
+         ((org-agenda-overriding-header "Email list")))
+        ("S" "Sale" tags-todo "sale"
+         ((org-agenda-overriding-header "Sales list")))
+        ))
+
+   (setq org-agenda-files '("~/.emacs.d/org-files/gtd/inbox.org"
+                         "~/.emacs.d/org-files/gtd/gtd.org"
+                         "~/.emacs.d/org-files/gtd/tickler.org"))
+   (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+   (setq org-refile-targets '(("~/.emacs.d/org-files/gtd/gtd.org" :maxlevel . 3)
+                           ("~/.emacs.d/org-files/gtd/someday.org" :level . 1)
+                           ("~/.emacs.d/org-files/gtd/tickler.org" :maxlevel . 2)))
+   (setq org-outline-path-complete-in-steps nil)         ; Refile in a single go
+   (setq org-refile-use-outline-path t)                  ; Show full paths for refiling
    (define-key global-map "\C-cc" 'org-capture)
    (setq org-capture-templates
-         `(("t" "Todo (priv)" entry (file "~/.emacs.d/org-files/priv.org")  
-            "** TODO %?\n %i\n %a")
-           ("w" "Todo (work)" entry (file "~/.emacs.d/org-files/business.org")
+         `(("t" "Todo [inbox]" entry (file+headline "~/.emacs.d/org-files/gtd/inbox.org" "Tasks")  
+            "* TODO %i%?")
+           ("T" "Tickler" entry (file+headline "~/.emacs.d/org-files/gtd/tickler.org" "Tickler")  
+            "* %i%? \n %U")
+           ("w" "Todo (work)" entry (file "~/.emacs.d/org-files/gtd/business.org")
             "** TODO %?\n %i\n %a")
            ("e" "Time logging" table-line (file "~/.emacs.d/org-files/time.org")
             "| %^t | ffw | hours |")

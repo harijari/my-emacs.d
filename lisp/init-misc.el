@@ -88,11 +88,12 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-(setq dashboard-items '((recents  . 5)
-                        (bookmarks . 5)
-                        (projects . 5)
-                        (agenda . 5)
-                        (registers . 5)))
+  (setq show-week-agenda-p t)
+  (setq dashboard-items '((recents  . 5)
+                          (bookmarks . 5)
+                          (projects . 5)
+                          (agenda . 5)
+                          (registers . 5)))
   )
 
 
@@ -101,6 +102,8 @@
 ;; flashing an unstyled frame, menu or scroll bars.
 ;(fringe-mode -1)
 (tooltip-mode t)
+(setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+(setq inhibit-startup-screen t)
 (tool-bar-mode -1)
 ;(menu-bar-mode -1)
 (auto-save-mode -1)

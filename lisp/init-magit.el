@@ -1,4 +1,3 @@
-(require-package 'magit)
 
 (use-package magit
   :ensure t
@@ -12,11 +11,11 @@
   
   )
 
-(use-package magit-gitflow
-  :ensure t
-  :hook (
-         (magit-mode . turn-on-magit-gitflow)
-         )
-  )
+;(use-package magit-gitflow
+;  :ensure t
+;  :hook (
+;         (magit-mode . turn-on-magit-gitflow)
+;         )
+;  )
 
 (provide 'init-magit)
