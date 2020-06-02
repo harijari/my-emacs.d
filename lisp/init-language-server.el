@@ -4,12 +4,11 @@
   :hook ((php-mode json-mode scss-mode css-mode web-mode bash-mode vue-mode js2-mode) . lsp-deferred)
   :config
   (lsp-lens-mode)
-
   (custom-set-variables
-  '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
-  '(lsp-intelephense-license-key "00V44OWGK0WYIP0")
   '(lsp-enable-file-watchers nil)
   '(lsp-enable-which-key-integration)
+  '(lsp-enable-which-key-integration nil)
+  '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
   )
   :commands (lsp lsp-deferred))
 
@@ -44,10 +43,5 @@
   :commands lsp-treemacs-errors-list
   )
 
-(custom-set-variables
- '(lsp-intelephense-files-associations ["*.php" "*.phtml" "*.inc" "*.module"])
- '(lsp-intelephense-license-key "00V44OWGK0WYIP0")
- '(lsp-enable-file-watchers nil)
- )
 
 (provide 'init-language-server)

@@ -59,6 +59,7 @@
 (require 'init-theme)
 (require 'init-snippets)
 (require 'init-local)
+(require 'init-secrets)
 
 (put 'narrow-to-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
